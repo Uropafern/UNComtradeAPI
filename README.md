@@ -3,7 +3,7 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
 ## สิ่งที่ต้องทำก่อนรันโค้ด
 - ติดตั้ง Python
 - ติดตั้ง Pandas
-- ติดตั้ง UN Comtrade API Package
+- ติดตั้ง UN Comtrade API Package (อ่านเต็มๆได้ที่:https://github.com/uncomtrade/comtradeapicall)
   - ที่มา:https://github.com/uncomtrade/comtradeapicall
 ```
 pip install comtradeapicall
