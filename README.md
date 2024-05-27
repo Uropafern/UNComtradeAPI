@@ -1,5 +1,13 @@
 # UNComtradeAPI
 This is UNComtrade Semiconductor Industry for NXPO used only.
+## สิ่งที่ต้องทำก่อนรันโค้ด
+- ติดตั้ง Python
+- ติดตั้ง Pandas
+- ติดตั้ง UN Comtrade API Package
+  - ที่มา:https://github.com/uncomtrade/comtradeapicall
+```
+pip install comtradeapicall
+```
 ```
 mydf = comtradeapicall.getFinalData(subscription_key, typeCode='C', freqCode='A', clCode='HS', period='2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023',
                                     reporterCode=None, cmdCode='8534,8541,854110,854121,854129,854130,854140,854150,854160,854190,8542,854231,854232,854233,854239,854290,854141,854142,854143,854149,854151,854159', flowCode='M,X',
