@@ -2,7 +2,19 @@
 This is UNComtrade Semiconductor Industry for NXPO used only.
 ## สิ่งที่ต้องทำก่อนรันโค้ด
 - ติดตั้ง Python
-- ติดตั้ง Pandas
+  - Download https://www.python.org/downloads/
+  - ตรวจสอบการติดตั้งใน Command prompt
+  ```
+  python --version
+  ```
+- ติดตั้ง pip (ถ้าไม่มี; pip เป็นเครื่องมือสำหรับการติดตั้งและจัดการแพ็คเกจใน Python)
+  ```
+  python -m ensurepip --upgrade
+  ```
+- ติดตั้ง Pandas ลงใน Command prompt
+  ```
+  pip install pandas
+  ```
 - ติดตั้ง UN Comtrade API Package (อ่านเต็มๆได้ที่:https://github.com/uncomtrade/comtradeapicall)
   - ที่มา:https://github.com/uncomtrade/comtradeapicall
 ```
