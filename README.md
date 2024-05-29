@@ -1,8 +1,9 @@
 # UNComtradeAPI
 This is UNComtrade Semiconductor Industry for NXPO used only.
 ## สิ่งที่ต้องทำก่อนรันโค้ด
-- Subscription Keys
+- มี Subscription Keys
   - สมัครสมาชิกผ่านทางเว็บไซต์ UNComtrade ก่อน https://comtradeplus.un.org/
+  - ทำการ Log-in
   - ขอ **UNComtrade free trial 15 วัน** เพื่อทำการดาวน์โหลดตามลิงค์นี้ https://comtradeplus.un.org/MyComtrade/TrialRequest
   - หลังจากได้อีเมล์ตอบกลับจากทาง UNComtrade แล้ว ขอ **API Subscription Keys**  (วิธีเต็มพร้อมรูปประกอบ: https://uncomtrade.org/docs/api-subscription-keys/)
     1. ไปที่ลิ้งค์ https://comtradedeveloper.un.org แล้ว Log-in อีเมล์ตามที่สมัครสมาชิกไว้
