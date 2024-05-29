@@ -37,7 +37,7 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
     ```
     subscription_key = 'abcsdffhhjgj(Primary key ที่copyมา)'
     ```
- - ต่อมากล่องโค้ดด้านล่างคือการเรียกตัว API มา ในกรณีที่อยากแก้ไขเพิ่ม อย่างเช่น มีการอัปเดตปี 2024, 2025, 2026, ... แล้วอยากได้ปี 2013-2026 ให้เพิ่มปีหลัง period โดย**ห้ามมีช่อง spacebar เว้นเ**ด็ดขาด
+ - ต่อมากล่องโค้ดด้านล่างคือการเรียกตัว API มา ในกรณีที่อยากแก้ไขเพิ่ม อย่างเช่น มีการอัปเดตปี 2024, 2025, 2026, ... ถ้าต้องการปี 2013-2026 ให้เพิ่มปีหลัง period โดย**ห้าม**มีช่อง spacebar เว้นเด็ดขาด
   ```
   mydf = comtradeapicall.getFinalData(subscription_key, typeCode='C', freqCode='A', clCode='HS', period='2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023',
                                       reporterCode=None, cmdCode='8534,8541,854110,854121,854129,854130,854140,854150,854160,854190,8542,854231,854232,854233,854239,854290,854141,854142,854143,854149,854151,854159', flowCode='M,X',
@@ -55,7 +55,7 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
    - typeCode(str) : Product type. Goods (C) or Services (S) -> **'C'**
    - freqCode(str) : The time interval at which observations occur. Annual (A) or Monthly (M) ; ดูเป็นรายปี -> **'A'**
    - clCode(str) : Indicates the product classification used and which version (HS, SITC) ; ใช้ HS Code ในการจำแนก -> **'HS'**
-   - period(str) : Combination of year and month (for monthly), year for (annual) ; เลือกปีที่สนใจถ้าเอาปีเดียวก็ใส่ปีเดียวถ้าเอาหลายปีก็ใส่เลขทุกปีมีลูกน้ำคั่น**ห้ามมีช่อง spacebarเว้น**
+   - period(str) : Combination of year and month (for monthly), year for (annual) ; เลือกปีที่สนใจถ้าเอาปีเดียวก็ใส่ปีเดียวถ้าเอาหลายปีก็ใส่เลขทุกปีมีลูกน้ำคั่น**ห้าม**มีช่อง spacebarเว้น
    - reporterCode(str) : The country or geographic area to which the measured statistical phenomenon relates ; เนื่องจากต้องการ**ทุก**ประเทศจึงใช้ **None**
    - cmdCode(str) : Product code in conjunction with classification code ; เป็นรหัส HS Code ซึ่งเลขที่ขึ้นต้นด้วย 8534, 8541, 8542 จะเป็นรหัสที่มีความเกี่ยวข้องกับสารกึ่งตัวนำ
    - flowCode(str) : Trade flow or sub-flow (exports, re-exports, imports, re-imports, etc.) ; สนใจแค่ Import(รหัส M),Export(รหัส X) -> **'M,X'**
