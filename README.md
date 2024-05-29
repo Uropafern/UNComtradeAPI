@@ -5,10 +5,10 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
   - สมัครสมาชิกผ่านทางเว็บไซต์ UNComtrade ก่อน https://comtradeplus.un.org/
   - ทำการ Log-in
   - ขอ **UNComtrade free trial 15 วัน** เพื่อทำการดาวน์โหลดตามลิงค์นี้ https://comtradeplus.un.org/MyComtrade/TrialRequest
-  - หลังจากได้อีเมล์ตอบกลับจากทาง UNComtrade แล้ว ขอ **API Subscription Keys**  (วิธีเต็มพร้อมรูปประกอบ: https://uncomtrade.org/docs/api-subscription-keys/)
+  - หลังจากได้อีเมล์ตอบกลับจากทาง UNComtrade แล้ว ขอ **API Subscription Keys**  (วิธีเต็มพร้อมรูป: https://uncomtrade.org/docs/api-subscription-keys/)
     1. ไปที่ลิ้งค์ https://comtradedeveloper.un.org แล้ว Log-in อีเมล์ตามที่สมัครสมาชิกไว้
     2. ไปที่ https://comtradedeveloper.un.org/products เลือก Premium Trial APIs
-    3. ตรง Your subscriptions จะมีช่องให้กรอกข้อมูล ให้ทำการตั้งชื่ออะไรก็ได้แล้วกด Subscribe
+    3. ตรงหัวข้อ Your subscriptions จะมีช่องให้กรอกข้อมูล ให้ทำการตั้งชื่ออะไรก็ได้แล้วกด Subscribe
     4. รอประมาณครึ่งวันแล้วมาที่ลิงค์ https://comtradedeveloper.un.org/profile จะพบว่ามี Primary key อยู่ให้ทำการกด show ก็จะแสดง Subscription Keys ให้ใช้ตอนรันโค้ด
 - ติดตั้ง Python
   - Download https://www.python.org/downloads/
