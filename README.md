@@ -64,8 +64,8 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
    - customsCode(str) : Customs or statistical procedure ; สนใจภาพรวม TOTAL จึงใช้รหัส **'C00'**
    - motCode(str) : The mode of transport used when goods enter or leave the economic territory of a country ; สนใจภาพรวม TOTAL จึงใช้รหัส **'0'**
 ## 3. หลังจากกดรัน Python ไป
-  - ได้ข้อมูลมา3ไฟล์ คือ 'UNTradeforVis.csv','GlobalUNTrade.csv' และ'perbycountry.csv' ให้นำเข้า PowerBI แล้วทำการเพิ่ม Column ใน Table view โดยใช้ DAX ดังนี้
-  - Table **perbycountry** สร้าง Column Percentage ของมูลค่านำเข้าหรือส่งออกประเทศนั้นเมื่อเทียบกับโลกจามรายปี
+  - ได้ข้อมูลมา3ไฟล์ คือ 'UNTradeforVis.csv','GlobalUNTrade.csv' และ'perbycountry.csv' ให้นำเข้า PowerBI แล้วทำการเพิ่ม New Column ในหน้า Table view โดยใช้ DAX ดังนี้
+  - Table **perbycountry** สร้าง Column Percentage ของมูลค่านำเข้าหรือส่งออกประเทศนั้นเมื่อเทียบกับโลกตามรายปี
     ```
     Percentage = 
     VAR CurrentYear = 'perbycountry'[Year]
