@@ -68,53 +68,53 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
   - Table **perbycountry** สร้าง Column Percentage ของมูลค่านำเข้าหรือส่งออกประเทศนั้นเมื่อเทียบกับโลกจามรายปี
     ```
     Percentage = 
-VAR CurrentYear = 'perbycountry'[Year]
-VAR GlobalValue = 
-    IF(
-        'perbycountry'[FlowDesc] = "Import",
-        CALCULATE(
-            SELECTEDVALUE('GlobalUNTrade'[GlobalImport]),
-            'GlobalUNTrade'[Year] = CurrentYear
-        ),
-        CALCULATE(
-            SELECTEDVALUE('GlobalUNTrade'[GlobalExport]),
-            'GlobalUNTrade'[Year] = CurrentYear
+    VAR CurrentYear = 'perbycountry'[Year]
+    VAR GlobalValue = 
+        IF(
+            'perbycountry'[FlowDesc] = "Import",
+            CALCULATE(
+                SELECTEDVALUE('GlobalUNTrade'[GlobalImport]),
+                'GlobalUNTrade'[Year] = CurrentYear
+            ),
+            CALCULATE(
+                SELECTEDVALUE('GlobalUNTrade'[GlobalExport]),
+                'GlobalUNTrade'[Year] = CurrentYear
+            )
         )
-    )
-RETURN
-    DIVIDE('perbycountry'[Value], GlobalValue)
+    RETURN
+        DIVIDE('perbycountry'[Value], GlobalValue)
     ```
   - Table **UNTradeforVis** สร้าง Column Type และ TradeBalanceByType ตามลำดับ
     ```
     Type = SWITCH (
-    TRUE (),
-    LEFT('UNTradeforVis'[CmdCode], 4) = "8534", "Print Circuit Board",
-    LEFT('UNTradeforVis'[CmdCode], 4) = "8541", "Diodes, transistors and similar semi-conductor devices",
-    LEFT('UNTradeforVis'[CmdCode], 4) = "8542", "Integrated Circuit & Parts",
-    BLANK ()
-)
+        TRUE (),
+        LEFT('UNTradeforVis'[CmdCode], 4) = "8534", "Print Circuit Board",
+        LEFT('UNTradeforVis'[CmdCode], 4) = "8541", "Diodes, transistors and similar semi-conductor devices",
+        LEFT('UNTradeforVis'[CmdCode], 4) = "8542", "Integrated Circuit & Parts",
+        BLANK ()
+    )
     ```
     ```
     TradeBalanceByType = 
-VAR CurrentType = 'UNTradeforVis'[Type]
-VAR CurrentCountry = 'UNTradeforVis'[Country1]
-VAR CurrentYear = 'UNTradeforVis'[Year]
-VAR TotalExport = 
-    CALCULATE(
-        SUM('UNTradeforVis'[PrimaryValue]),
-        'UNTradeforVis'[FlowDesc] = "Export",
-        'UNTradeforVis'[Type] = CurrentType,
-        'UNTradeforVis'[Country1] = CurrentCountry,
-        'UNTradeforVis'[Year] = CurrentYear
-    )
-VAR TotalImport = 
-    CALCULATE(
-        SUM('UNTradeforVis'[PrimaryValue]),
-        'UNTradeforVis'[FlowDesc] = "Import",
-        'UNTradeforVis'[Type] = CurrentType,
-        'UNTradeforVis'[Country1] = CurrentCountry,
-        'UNTradeforVis'[Year] = CurrentYear
-    )
-RETURN
-    TotalExport - TotalImport
+      VAR CurrentType = 'UNTradeforVis'[Type]
+      VAR CurrentCountry = 'UNTradeforVis'[Country1]
+      VAR CurrentYear = 'UNTradeforVis'[Year]
+      VAR TotalExport = 
+          CALCULATE(
+              SUM('UNTradeforVis'[PrimaryValue]),
+              'UNTradeforVis'[FlowDesc] = "Export",
+              'UNTradeforVis'[Type] = CurrentType,
+              'UNTradeforVis'[Country1] = CurrentCountry,
+              'UNTradeforVis'[Year] = CurrentYear
+          )
+      VAR TotalImport = 
+          CALCULATE(
+              SUM('UNTradeforVis'[PrimaryValue]),
+              'UNTradeforVis'[FlowDesc] = "Import",
+              'UNTradeforVis'[Type] = CurrentType,
+              'UNTradeforVis'[Country1] = CurrentCountry,
+              'UNTradeforVis'[Year] = CurrentYear
+          )
+      RETURN
+          TotalExport - TotalImport
     ```
