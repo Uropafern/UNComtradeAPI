@@ -51,7 +51,7 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
                                       partnerCode='0', partner2Code='0', customsCode='C00', motCode='0', format_output='JSON',
                                       aggregateBy=None, breakdownMode='classic', countOnly=None, includeDesc=True)
   ```
-  **Selection Criteria** เป็นเงื่อไขในการqueryพร้อมคำอธิบาย [อิงจากหน้าค้นหาโดยสามารถดาวน์โหลดแมนนวลได้](https://comtradeplus.un.org/TradeFlow?Frequency=A&Flows=X&CommodityCodes=TOTAL&Partners=0&Reporters=all&period=2023&AggregateBy=none&BreakdownMode=plus)
+  **Selection Criteria** เป็นเงื่อไขในการqueryพร้อมคำอธิบาย [UNComtrade Database](https://comtradeplus.un.org/TradeFlow?Frequency=A&Flows=X&CommodityCodes=TOTAL&Partners=0&Reporters=all&period=2023&AggregateBy=none&BreakdownMode=plus)
    - typeCode(str) : Product type. Goods (C) or Services (S) -> **'C'**
    - freqCode(str) : The time interval at which observations occur. Annual (A) or Monthly (M) ; ดูเป็นรายปี -> **'A'**
    - clCode(str) : Indicates the product classification used and which version (HS, SITC) ; ใช้ HS Code ในการจำแนก -> **'HS'**
