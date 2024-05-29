@@ -1,6 +1,6 @@
 # UNComtradeAPI
 This is UNComtrade Semiconductor Industry for NXPO used only.
-## สิ่งที่ต้องมีก่อนรันโค้ด
+## 1. สิ่งที่ต้องมีก่อนรันโค้ด
 - มี Subscription Keys
   - สมัครสมาชิกผ่านทางเว็บไซต์ UNComtrade ก่อน https://comtradeplus.un.org/
   - ทำการ Log-in
@@ -28,22 +28,30 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
   ```
   pip install comtradeapicall
   ```
-## ทำความเข้าใจโค้ดเรียกAPI
-  - ในโค้ดที่ให้จะมีช่องให้กรอก subscription_key = '<YOUR KEY>'ซึ่งให้ไป copy Primary key ใน https://comtradedeveloper.un.org/profile มาวางทับใน <YOUR KEY> แทน
+## 2. ทำความเข้าใจโค้ดเรียกAPI และปรับปรุงโค้ด
+  - ในโค้ดที่ให้ไปจะมีช่องให้กรอก subscription_key ซึ่งต้องไป copy Primary key ใน https://comtradedeveloper.un.org/profile มาวางทับใน ช่องให้กรอก subscription_key แทน
+    ```
+    subscription_key = '<YOUR KEY>'
+    ```
+   **Example:**
+    ```
+    subscription_key = 'abcsdffhhjgj(Primary key ที่copyมา)'
+    ```
+ - ต่อมากล่องโค้ดด้านล่างคือการเรียกตัว API มา ในกรณีที่อยากแก้ไขเพิ่ม อย่างเช่น มีการอัปเดตปี 2024, 2025, 2026, ... แล้วอยากได้ปี 2013-2026 ให้เพิ่มปีหลัง period โดย**ห้ามมีช่อง spacebar เว้นเ**ด็ดขาด
   ```
   mydf = comtradeapicall.getFinalData(subscription_key, typeCode='C', freqCode='A', clCode='HS', period='2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023',
                                       reporterCode=None, cmdCode='8534,8541,854110,854121,854129,854130,854140,854150,854160,854190,8542,854231,854232,854233,854239,854290,854141,854142,854143,854149,854151,854159', flowCode='M,X',
                                       partnerCode='0', partner2Code='0', customsCode='C00', motCode='0', format_output='JSON',
                                       aggregateBy=None, breakdownMode='classic', countOnly=None, includeDesc=True)
   ```
-  จากช่องโค้ดด้านบนคือการเรียกตัว API มา ในกรณีที่อยากแก้ไขเพิ่ม อย่างเช่น มีการอัปเดตปี 2024, 2025, 2026, ... แล้วอยากได้ปี 2013-2026 ให้เพิ่มปีหลัง period โดยห้ามมีช่อง spacebar เว้นเด็ดขาด
+  **Result:**
   ```
   mydf = comtradeapicall.getFinalData(subscription_key, typeCode='C', freqCode='A', clCode='HS', period='2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026',
                                       reporterCode=None, cmdCode='8534,8541,854110,854121,854129,854130,854140,854150,854160,854190,8542,854231,854232,854233,854239,854290,854141,854142,854143,854149,854151,854159', flowCode='M,X',
                                       partnerCode='0', partner2Code='0', customsCode='C00', motCode='0', format_output='JSON',
                                       aggregateBy=None, breakdownMode='classic', countOnly=None, includeDesc=True)
   ```
-  **Selection Criteria** [อิงจากหน้าค้นหา](https://comtradeplus.un.org/TradeFlow?Frequency=A&Flows=X&CommodityCodes=TOTAL&Partners=0&Reporters=all&period=2023&AggregateBy=none&BreakdownMode=plus) จริงๆสามารถดาวน์โหลดแมนนวลในลิงค์นี้ได้
+  **Selection Criteria** เป็นเงื่อไขในการqueryพร้อมคำอธิบาย [อิงจากหน้าค้นหาโดยสามารถดาวน์โหลดแมนนวลได้](https://comtradeplus.un.org/TradeFlow?Frequency=A&Flows=X&CommodityCodes=TOTAL&Partners=0&Reporters=all&period=2023&AggregateBy=none&BreakdownMode=plus)
    - typeCode(str) : Product type. Goods (C) or Services (S) -> **'C'**
    - freqCode(str) : The time interval at which observations occur. Annual (A) or Monthly (M) ; ดูเป็นรายปี -> **'A'**
    - clCode(str) : Indicates the product classification used and which version (HS, SITC) ; ใช้ HS Code ในการจำแนก -> **'HS'**
@@ -55,3 +63,58 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
    - partner2Code(str) : A secondary partner country or geographic area for the respective trade flow ; เนื่องจากประเทศนึงก็จะมีคู่ค้าอันดับ 2 แต่เราสนใจ World ซึ่งเป็นภาพรวมจึงใช้รหัส **'0'**
    - customsCode(str) : Customs or statistical procedure ; สนใจภาพรวม TOTAL จึงใช้รหัส **'C00'**
    - motCode(str) : The mode of transport used when goods enter or leave the economic territory of a country ; สนใจภาพรวม TOTAL จึงใช้รหัส **'0'**
+## 3. หลังจากกดรัน Python ไป
+  - ได้ข้อมูลมา3ไฟล์ คือ 'UNTradeforVis.csv','GlobalUNTrade.csv' และ'perbycountry.csv' ให้นำเข้า PowerBI แล้วทำการเพิ่ม Column ใน Table view โดยใช้ DAX ดังนี้
+  - Table **perbycountry** สร้าง Column Percentage ของมูลค่านำเข้าหรือส่งออกประเทศนั้นเมื่อเทียบกับโลกจามรายปี
+    ```
+    Percentage = 
+VAR CurrentYear = 'perbycountry'[Year]
+VAR GlobalValue = 
+    IF(
+        'perbycountry'[FlowDesc] = "Import",
+        CALCULATE(
+            SELECTEDVALUE('GlobalUNTrade'[GlobalImport]),
+            'GlobalUNTrade'[Year] = CurrentYear
+        ),
+        CALCULATE(
+            SELECTEDVALUE('GlobalUNTrade'[GlobalExport]),
+            'GlobalUNTrade'[Year] = CurrentYear
+        )
+    )
+RETURN
+    DIVIDE('perbycountry'[Value], GlobalValue)
+    ```
+  - Table **UNTradeforVis** สร้าง Column Type และ TradeBalanceByType ตามลำดับ
+    ```
+    Type = SWITCH (
+    TRUE (),
+    LEFT('UNTradeforVis'[CmdCode], 4) = "8534", "Print Circuit Board",
+    LEFT('UNTradeforVis'[CmdCode], 4) = "8541", "Diodes, transistors and similar semi-conductor devices",
+    LEFT('UNTradeforVis'[CmdCode], 4) = "8542", "Integrated Circuit & Parts",
+    BLANK ()
+)
+    ```
+    ```
+    TradeBalanceByType = 
+VAR CurrentType = 'UNTradeforVis'[Type]
+VAR CurrentCountry = 'UNTradeforVis'[Country1]
+VAR CurrentYear = 'UNTradeforVis'[Year]
+VAR TotalExport = 
+    CALCULATE(
+        SUM('UNTradeforVis'[PrimaryValue]),
+        'UNTradeforVis'[FlowDesc] = "Export",
+        'UNTradeforVis'[Type] = CurrentType,
+        'UNTradeforVis'[Country1] = CurrentCountry,
+        'UNTradeforVis'[Year] = CurrentYear
+    )
+VAR TotalImport = 
+    CALCULATE(
+        SUM('UNTradeforVis'[PrimaryValue]),
+        'UNTradeforVis'[FlowDesc] = "Import",
+        'UNTradeforVis'[Type] = CurrentType,
+        'UNTradeforVis'[Country1] = CurrentCountry,
+        'UNTradeforVis'[Year] = CurrentYear
+    )
+RETURN
+    TotalExport - TotalImport
+    ```
