@@ -16,7 +16,7 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
   ```
   python --version
   ```
-- ติดตั้ง pip (เป็นเครื่องมือสำหรับการติดตั้งและจัดการแพ็คเกจใน Python)
+- ติดตั้ง pip (เป็นเครื่องมือสำหรับการติดตั้งและจัดการแพ็คเกจใน Python) [ที่มา](https://phoenixnap.com/kb/install-pip-windows)
   ```
   python -m ensurepip --upgrade
   ```
