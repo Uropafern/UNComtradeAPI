@@ -24,6 +24,10 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
   ```
   pip install pandas
   ```
+- ติดตั้ง urllib3 (ที่มา:https://github.com/uncomtrade/comtradeapicall)
+  ```
+  pip install urllib3
+  ```
 - ติดตั้ง UN Comtrade API Package (ที่มา:https://github.com/uncomtrade/comtradeapicall)
   ```
   pip install comtradeapicall
