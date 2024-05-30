@@ -34,6 +34,7 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
     subscription_key = '<YOUR KEY>'
     ```
    **Example:**
+   
     ```
     subscription_key = 'abcsdffhhjgj(Primary key ที่copyมา)'
     ```
