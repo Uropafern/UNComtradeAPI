@@ -125,7 +125,8 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
           TotalExport - TotalImport
     ```
 - Table **AnnualIncome60to65** สร้าง Column IncomeCategory
-  ```IncomeCategory = 
+  ```
+  IncomeCategory = 
     IF (
         AnnualIncome60to65[รายได้] < 500000000,
         "< 500 million",
