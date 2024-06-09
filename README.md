@@ -134,4 +134,4 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
                   "500-1000 million",
                   "> 1000 million"
               )
-)```
+    )```
