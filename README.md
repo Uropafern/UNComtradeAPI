@@ -70,7 +70,7 @@ This is UNComtrade Semiconductor Industry for NXPO used only.
    - motCode(str) : The mode of transport used when goods enter or leave the economic territory of a country ; สนใจภาพรวม TOTAL จึงใช้รหัส **'0'**
 ## 3. หลังจากกดรัน Python เสร็จแล้ว
   - หลังจากได้ข้อมูลมา3ไฟล์ คือ 'UNTradeforVis.csv', 'GlobalUNTrade.csv', 'perbycountry.csv' และ'AnnualIncome60to65.csv' ให้แยกการนำเข้าข้อมูลใน PowerBI โดยนำข้อมูล 'UNTradeforVis.csv', 'GlobalUNTrade.csv' และ'perbycountry.csv' นำเข้าพร้อมกันในไฟล์หนึ่ง และนำเข้าข้อมูล 'AnnualIncome60to65.csv' แยกอีกไฟล์หนึ่ง แล้วทำการเพิ่มคอลัมน์ใหม่ในหน้า Table view โดยใช้ DAX ดังนี้
-  - Table **perbycountry** สร้าง Column Percentage ของมูลค่านำเข้าหรือส่งออกประเทศนั้นเมื่อเทียบกับโลกตามรายปี
+  - Table **perbycountry** สร้าง Column Percentage ของมูลค่านำเข้าหรือส่งออกประเทศนั้นเมื่อเทียบกับโลกตามรายปี หลังจากนั้นไปที่ Column view ปรับ Format เป็น Percentage เอาทศนิยม 4 ตำแหน่ง และปรับ Summarization เป็น Don’t Summarize
     ```
     Percentage = 
     VAR CurrentYear = 'perbycountry'[Year]
